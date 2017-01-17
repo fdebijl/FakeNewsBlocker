@@ -1,1 +1,8 @@
-wikipedia.org,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+# Format: 
+# website-url,proof-article-url
+# Please specify the website URL in the following format:
+# domain.tld
+#
+# For example:
+# TotallyFakeNews.org
+#
