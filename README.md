@@ -7,7 +7,7 @@ Heb je een bijdrage aan de lijst? Mail dan naar fakenews@debijl.xyz of maak hier
 
 __Format voor blocklist.txt:__  
 `website-url,proof-url`  
-Geef het url op in deze format, dus geen http:// of subdomeinen.  
+Geef het url op in deze format, dus geen http:// of subdomeinen:  
 `domain.tld`  
 Bijvoorbeeld:  
 `TotallyFakeNews.org`
