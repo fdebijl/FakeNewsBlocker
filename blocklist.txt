@@ -1,11 +1,3 @@
-# Format: 
-# website-url,proof-url
-# Please specify the website URL in the following format:
-# domain.tld
-#
-# For example:
-# TotallyFakeNews.org
-#,
 ABCnews.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
 Bloomberg.ma,https://en.wikipedia.org/wiki/List_of_fake_news_websites
 DrudgeReport.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
