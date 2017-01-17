@@ -1,8 +1,17 @@
 # Format: 
-# website-url,proof-article-url
+# website-url,proof-url
 # Please specify the website URL in the following format:
 # domain.tld
 #
 # For example:
 # TotallyFakeNews.org
-#
+#,
+ABCnews.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+Bloomberg.ma,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+DrudgeReport.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+MSNBC.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+MSNBC.website,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+usatoday.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+washingtonpost.com.co,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+celebtricity.com,https://en.wikipedia.org/wiki/List_of_fake_news_websites
+creambmp.com,https://en.wikipedia.org/wiki/List_of_fake_news_websites
