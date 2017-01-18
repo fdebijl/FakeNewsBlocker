@@ -1,4 +1,4 @@
-# [https://chrome.google.com/webstore/detail/fake-news-blocker/gpaklhiejaggcipgepjjcckmehbefdok/](FakeNewsBlocker)
+# [FakeNewsBlocker](https://chrome.google.com/webstore/detail/fake-news-blocker/gpaklhiejaggcipgepjjcckmehbefdok/)
 
 Fake News Blocker gebruikt een gecrowdsourcede lijst van zogenaamde 'fake news' sites die - al dan niet vanuit winstoogmerk - nepnieuws verspreiden. Als je op zo'n site komt en deze plugin is actief dan krijg je een notificatie dat deze website vermoedelijk nepnieuws verspreid.
 
