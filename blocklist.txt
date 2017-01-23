@@ -36,3 +36,9 @@ TheUsPatriot.com,http://fakenewswatch.com/
 WitScience.org,http://fakenewswatch.com/
 EnduringVision.com,http://www.dailydot.com/layer8/fake-news-sites-list-facebook/
 Abcnews.com.co,http://www.dailydot.com/layer8/fake-news-sites-list-facebook/
+noch.info,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+yesimright.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+shoebat.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+endingthefed.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+truthfeed.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+yournewswire.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
