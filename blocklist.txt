@@ -42,3 +42,13 @@ shoebat.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-fac
 endingthefed.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
 truthfeed.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
 yournewswire.com,https://www.buzzfeed.com/albertonardelli/hyperpartisan-sites-and-facebook-pages-are-publishing-false
+trendnieuws.nl,http://www.napnieuws.nl/2017/01/20/nepnieuws-in-nederland-een-gevaar-voor-de-verkiezingen/
+leeshetnu.nl,http://www.napnieuws.nl/2017/01/20/nepnieuws-in-nederland-een-gevaar-voor-de-verkiezingen/
+wanttoknow.nl,http://www.napnieuws.nl/2017/01/20/nepnieuws-in-nederland-een-gevaar-voor-de-verkiezingen/
+vaccinvrij.nl,http://www.napnieuws.nl/2017/01/20/nepnieuws-in-nederland-een-gevaar-voor-de-verkiezingen/
+dagelijksestandaard.nl,http://www.napnieuws.nl/2017/01/20/nepnieuws-in-nederland-een-gevaar-voor-de-verkiezingen/
+ninefornews.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
+ahealthyme.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
+belfort-group.eu,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
+bestgezond.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
+bewustnieuws.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
