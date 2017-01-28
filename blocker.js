@@ -3,7 +3,6 @@
 	
 	var reader = new XMLHttpRequest(); var url = ""; var art = "";
 	var tab = window.location.toString(); var aels = document.getElementsByTagName('a');
-	var
 	
 	window.onload = loadFile();
 	function loadFile() {
@@ -27,7 +26,8 @@
       		url = (lines[line]).split(',')[0];
 			art = (lines[line]).split(',')[1];
 			if(tab.match(getPat(url)) && url !== "") {
-				chrome.runtime.sendMessage({type: "notu"});
+				chrome.runtime.sendMessage({t: "notu", l: url});
+				console.warn("Supplied proof: " + art);
 			}
 			
 			for (var ael = 0; ael < aels.length; ael++) {

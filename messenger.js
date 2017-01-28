@@ -8,7 +8,7 @@
 	var opt = {
 		type: "basic",
 		title: "Fake News",
-		message: chrome.i18n.getMessage("Attent"),
+		message: "",
 		iconUrl: "logo128_fake.png",
 		buttons: [btn1, btn2]
 	};
@@ -23,7 +23,8 @@
 	}
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-		if (request.type === "notu") {
+		if (request.t === "notu") {
+			opt.message = chrome.i18n.getMessage("Attent", request.l)
 			chrome.notifications.create('thisisfakenews', opt, null)
 			chrome.notifications.onButtonClicked.addListener(btnClick);
 			sendResponse();
