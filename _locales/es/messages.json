@@ -1,0 +1,30 @@
+{
+	"appName": {
+		"message": "Fake News Blocker"
+	},
+	
+	"appDesc": {
+		"message": "Recibe una notificación cuando la página en la que estás se conoce para publicar noticias falsas."
+	},
+	
+	"notAccurate": {
+		"message": "Eso no es correcto",
+		"description": "Button - First option in notification, user will click this if inclusion of this site is inaccurate or unjustified."
+	},
+	
+	"Accurate": {
+		"message": "Cerrar",
+		"description": "Button - Should indicate that the notification will be dismissed or that the site is indeed fake. Use your best judgement and humor."
+	},
+	
+	"Attent": {
+		"message": "De acuerdo con nuestros datos $site$ publica 'noticias falsas' regularmente, considere esto antes de compartir este artículo.",
+		"description": "Full text that will display inside the notification.",
+		"placeholders": {
+			"site": {
+				"content": "$1",
+				"example": "este sitio"
+			}
+		}
+	}
+}

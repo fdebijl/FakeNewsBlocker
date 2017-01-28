@@ -3,12 +3,12 @@
 	var btn1 = new Object();
 	var btn2 = new Object(); 
 	
-	btn1.title = "Dit klopt niet";
-	btn2.title = "Ja, hartstikke nep";
+	btn1.title = chrome.i18n.getMessage("notAccurate");
+	btn2.title = chrome.i18n.getMessage("Accurate");
 	var opt = {
 		type: "basic",
 		title: "Fake News",
-		message: "Volgens onze gegevens brengt deze website mogelijk fake news. ",
+		message: chrome.i18n.getMessage("Attent"),
 		iconUrl: "logo128_fake.png",
 		buttons: [btn1, btn2]
 	};
