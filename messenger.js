@@ -3,12 +3,12 @@
 	var btn1 = new Object();
 	var btn2 = new Object(); 
 	
-	btn1.title = "Dit klopt niet";
-	btn2.title = "Ja, hartstikke nep";
+	btn1.title = chrome.i18n.getMessage("notAccurate");
+	btn2.title = chrome.i18n.getMessage("Accurate");
 	var opt = {
 		type: "basic",
 		title: "Fake News",
-		message: "Volgens onze gegevens brengt deze website mogelijk fake news. ",
+		message: "",
 		iconUrl: "logo128_fake.png",
 		buttons: [btn1, btn2]
 	};
@@ -23,7 +23,8 @@
 	}
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-		if (request.type === "notu") {
+		if (request.t === "notu") {
+			opt.message = chrome.i18n.getMessage("Attent", request.l)
 			chrome.notifications.create('thisisfakenews', opt, null)
 			chrome.notifications.onButtonClicked.addListener(btnClick);
 			sendResponse();

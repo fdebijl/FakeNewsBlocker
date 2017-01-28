@@ -2,9 +2,8 @@
 	"use strict";
 	
 	var reader = new XMLHttpRequest(); var url = ""; var art = "";
-	var tab = window.location.toString();
+	var tab = window.location.toString(); var aels = document.getElementsByTagName('a');
 	
-		
 	window.onload = loadFile();
 	function loadFile() {
 		reader.open('get', 'https://raw.githubusercontent.com/Fdebijl/FakeNewsBlocker/master/blocklist.txt', true); 
@@ -27,8 +26,14 @@
       		url = (lines[line]).split(',')[0];
 			art = (lines[line]).split(',')[1];
 			if(tab.match(getPat(url)) && url !== "") {
-				chrome.runtime.sendMessage({type: "notu"});
-				console.log("Match for fake news on URL: " + tab + ", using item: " + url);
+				chrome.runtime.sendMessage({t: "notu", l: url});
+				console.warn("Supplied proof: " + art);
+			}
+			
+			for (var ael = 0; ael < aels.length; ael++) {
+				if((aels[ael].href).match(getPat(url)) && url !== "" && (aels[ael].href) !== "") {
+					
+				}	
 			}
     	}
 	}

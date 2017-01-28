@@ -1,0 +1,30 @@
+{
+	"appName": {
+		"message": "Fake News Blocker"
+	},
+	
+	"appDesc": {
+		"message": "Erhalten eine benachrichtigung wenn die Seite die sie sind gefälschte nachrichten veröffentlicht."
+	},
+	
+	"notAccurate": {
+		"message": "Das ist nicht richtig",
+		"description": "Button - First option in notification, user will click this if inclusion of this site is inaccurate or unjustified."
+	},
+	
+	"Accurate": {
+		"message": "Schließen",
+		"description": "Button - Should indicate that the notification will be dismissed or that the site is indeed fake. Use your best judgement and humor."
+	},
+	
+	"Attent": {
+		"message": "Nach unseren daten veröffentlicht $site$ regelmäßig gefälschte nachrichten.",
+		"description": "Full text that will display inside the notification.",
+		"placeholders": {
+			"site": {
+				"content": "$1",
+				"example": "diese website"
+			}
+		}
+	}
+}
