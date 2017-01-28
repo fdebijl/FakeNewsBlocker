@@ -15,7 +15,7 @@ AmericanNews.com,http://fakenewswatch.com/
 BigAmericanNews.com,http://fakenewswatch.com/
 ChristWire.org,http://fakenewswatch.com/
 ```
-__Definition of Fake News__
+__Definition of Fake News__  
 Before adding a website to the blocklist, consider the following quote from the New York Times on the definition of Fake News:
 
 > News that is fake or only marginally real has lurked online — and in supermarket tabloids — for years, but never before has it played such a prominent role in an American election and its aftermath. Narrowly defined, “fake news” means a made-up story with an intention to deceive, often geared toward getting clicks. But the issue has become a political battering ram, with the left accusing the right of trafficking in disinformation, and the right accusing the left of tarring conservatives as a way to try to censor websites. In the process, the definition of fake news has blurred.
