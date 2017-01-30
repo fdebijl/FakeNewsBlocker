@@ -116,3 +116,4 @@ xandernieuws.punt.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssite
 zaplog.nl,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
 zonnewind.be,https://sites.google.com/site/dehoaxwijzer/valse-nieuwssites
 http://yournewswire.com/,http://yournewswire.com/german-chancellor-angela-merkel-took-selfie-with-brussels-terrorist/
+https://www.bugetul.ro,https://www.bugetul.ro/drama-incredibila-un-politician-si-ucis-indirect-fiul/
