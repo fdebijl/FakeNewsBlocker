@@ -2,7 +2,7 @@
 
 Fake News Blocker uses a crowdsourced list of so called 'fake news' websites that publish falsified news with either monetary intent or the intent to spread misinformation. If you happen upon one of these sites with this plugin installed you'll get a notification alerting you that the current page has been known to publish fake news.
 
-If you have any contributions to the blacklist feel free to shoot me an email at apps@debijl.xyz or make a pull request on our GitHub with your changes. Click on the Website button below to get there.
+If you have any contributions to the blacklist feel free to shoot me an email at apps@debijl.xyz or make a pull request here.
 
 __Format for blocklist.txt:__  
 `string website-url,proof-url`  
