@@ -18,7 +18,7 @@
 	},
 	
 	"Attent": {
-		"message": "Volgens onze gegevens publiceert $site$ met enige regelmaalt nepnieuws. Let op voordat je dit artikel/deze site deelt.",
+		"message": "Volgens onze gegevens publiceert $site$ met enige regelmaat nepnieuws. Let op voordat je dit artikel/deze site deelt.",
 		"description": "Full text that will display inside the notification.",
 		"placeholders": {
 			"site": {
