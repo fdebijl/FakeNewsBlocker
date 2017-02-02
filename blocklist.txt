@@ -22,7 +22,6 @@ EmpireNews.com,http://fakenewswatch.com/
 MSNBC.co,http://fakenewswatch.com/
 MSNBC.website,http://fakenewswatch.com/
 MediaMass.net,http://fakenewswatch.com/
-NationalReport.net,http://fakenewswatch.com/
 NewsBiscuit.com,http://fakenewswatch.com/
 News-Hound.com,http://fakenewswatch.com/
 NewsMutiny.com,http://fakenewswatch.com/
