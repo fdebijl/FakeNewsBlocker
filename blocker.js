@@ -2,7 +2,7 @@
 	"use strict";
 	
 	var reader = new XMLHttpRequest(); var url = ""; var art = "";
-	var tab = window.location.toString(); var aels = document.getElementsByTagName('a');
+	var tab = window.location.toString(); //var aels = document.getElementsByTagName('a');
 	
 	window.onload = loadFile();
 	function loadFile() {
@@ -17,7 +17,7 @@
 
 	function getPat(u) {
 		u = u.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-		return new RegExp('(http|https)(:\/\/)(.+|)(' + u + ')');
+		return new RegExp('(http|https)(:\/\/)(.+|)(' + u + ')', 'i');
 	}
 	
 	function matchURL() {
@@ -30,11 +30,11 @@
 				console.warn("Supplied proof: " + art);
 			}
 			
-			for (var ael = 0; ael < aels.length; ael++) {
-				if((aels[ael].href).match(getPat(url)) && url !== "" && (aels[ael].href) !== "") {
-					
-				}	
-			}
+			//for (var ael = 0; ael < aels.length; ael++) {
+			//	if((aels[ael].href).match(getPat(url)) && url !== "" && (aels[ael].href) !== "") {
+			//		
+			//	}	
+			//}
     	}
 	}
 })();
