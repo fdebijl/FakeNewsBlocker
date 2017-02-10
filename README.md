@@ -1,8 +1,8 @@
 # [FakeNewsBlocker](https://chrome.google.com/webstore/detail/fake-news-blocker/gpaklhiejaggcipgepjjcckmehbefdok/)
   
 <center>
-[![](https://img.shields.io/badge/Twitter-@fdebijl-blue.svg?style=flat)](https://twitter.com/fdebijl)
-[![](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Fdebijl/FakeNewsBlocker/blob/master/LICENSE)
+[![Twitter](https://img.shields.io/badge/Twitter-@fdebijl-blue.svg?style=flat)](https://twitter.com/fdebijl)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Fdebijl/FakeNewsBlocker/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/Fdebijl/FakeNewsBlocker.svg)](https://github.com/Fdebijl/FakeNewsBlocker/issues)
 </center>
 
