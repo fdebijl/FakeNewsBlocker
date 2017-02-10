@@ -1,7 +1,7 @@
 (function (){
 	"use strict";
 	
-	var reader = new XMLHttpRequest(), url = "", art = "", line = 0, then = "", fromCache = false,
+	var reader = new XMLHttpRequest(), url = "", art = "", line = 0, then = "", fromCache = false, warnText = "",
 	tab = window.location.toString(), ael = 0, aels = document.getElementsByTagName('a'), now = new Date(), cacheFile = "";
 	var weekFromNow = new Date(now.getTime() + 604800000);
 	now.setHours(0,0,0,0);
@@ -12,15 +12,14 @@
 			if (then < now) {
 				loadFile(1);
 			} else {
-				cacheFile = localStorage.getItem("FakeNews_blocklist");
 				fromCache = true;
+				matchURL();
 			}
 		} else {
 			reader.open('get', 'https://raw.githubusercontent.com/Fdebijl/FakeNewsBlocker/master/blocklist.txt', true); 
 			reader.onreadystatechange = function(){
 				if(reader.readyState === 4) {
 					matchURL();
-					console.log(reader.responseText);
 					localStorage.setItem("FakeNews_blocklist", reader.responseText);
 					localStorage.setItem("FakeNews_expires", weekFromNow);
 				}
@@ -38,13 +37,14 @@
 	};
 	
 	function matchURL() {
-		var lines = fromCache ? cacheFile.split('\n') : reader.responseText.split('\n');
+		var lines = fromCache ? localStorage.getItem("FakeNews_blocklist").split('\n') : reader.responseText.split('\n');
+		warnText = fromCache ? "(from cache)" : "";
 		for (line = 0; line < lines.length; line++) {
       		url = (lines[line]).split(',')[0];
 			art = (lines[line]).split(',')[1];
 			if(tab.match(getPat(url)) && url !== "") {
 				chrome.runtime.sendMessage({t: "notu", l: url});
-				console.warn("Supplied proof: " + art);
+				console.warn("Supplied proof " + warnText + ": " + art);
 			}
 			
 			for (ael = 0; ael < aels.length; ael++) {
