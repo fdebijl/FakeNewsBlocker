@@ -13,7 +13,7 @@ Fake News Blocker uses a crowdsourced list of so called 'fake news' websites tha
 If you have any contributions to the blacklist feel free to shoot me an email at apps@debijl.xyz or make a pull request here.
 
 __Format for blocklist.txt:__  
-`string website-url,proof-url`  
+`website-url,proof-url`  
 Supply the URL to the fake news site in the following format, so no leading subdomains or HTTP and no trailing directories:
 `domain.tld`  
 A few examples:
