@@ -5,10 +5,10 @@ function save_options() {
 	var l_types = [];
 	var l_fullbock = document.getElementById('fullblock').checked;
 	
-	l_types.push(document.getElementById('type1').checked ? 1 : 0);
-	l_types.push(document.getElementById('type2').checked ? 2 : 0);
-	l_types.push(document.getElementById('type3').checked ? 3 : 0);
-	l_types.push(document.getElementById('type4').checked ? 4 : 0);
+	l_types.push(document.getElementById('type1').checked ? 1 : null);
+	l_types.push(document.getElementById('type2').checked ? 2 : null);
+	l_types.push(document.getElementById('type3').checked ? 3 : null);
+	l_types.push(document.getElementById('type4').checked ? 4 : null);
 
 	chrome.storage.sync.set({
 		lists: l_lists,
@@ -34,10 +34,10 @@ function restore_options() {
 		document.getElementById('blocklists').value = items.lists;
 		document.getElementById('blacklist').value = items.blacklist;
 		document.getElementById('fullblock').checked = items.fullblock;
-		document.getElementById('type1').checked = typeof items.types[0] != "undefined";
-		document.getElementById('type2').checked = typeof items.types[1] != "undefined";
-		document.getElementById('type3').checked = typeof items.types[2] != "undefined";
-		document.getElementById('type4').checked = typeof items.types[3] != "undefined";		
+		document.getElementById('type1').checked = typeof items.types[0] == "number";
+		document.getElementById('type2').checked = typeof items.types[1] == "number";
+		document.getElementById('type3').checked = typeof items.types[2] == "number";
+		document.getElementById('type4').checked = typeof items.types[3] == "number";
 	});
 }
 

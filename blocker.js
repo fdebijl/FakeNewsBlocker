@@ -1,7 +1,7 @@
 (function (){
 	"use strict";
 	
-	var reader = new XMLHttpRequest(), url = "", art = "", line = 0, then = "", fromCache = false, warnText = "", type = 0, types = [], fullblock = false, rval = "", 
+	var reader = new XMLHttpRequest(), url = "", art = "", line = 0, then = "", fromCache = false, warnText = "", type = 0, types = [], fullblock = false, rval = "",
 	tab = window.location.toString(), ael = 0, aels = document.getElementsByTagName('a'), now = new Date(), blockLists = [], fullList = "", i = 0, blacklist = "";
 	var weekFromNow = new Date(now.getTime() + 604800000);
 	now.setHours(0,0,0,0);
@@ -33,6 +33,17 @@
 			rval = result[key];
 		});	return rval;
 	}
+	
+	function getPat(u) {
+		u = u.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+		return new RegExp('(http|https)(:\/\/)(.+|)(' + u + ')', 'i');
+	}
+	
+	// Runtime functions	
+	window.onload = function() {
+		getLists();
+		document.styleSheets[0].addRule('.FakeNews_link:before','content: url(https://github.com/Fdebijl/FakeNewsBlocker/raw/master/logo16_fake.png); display: inline !important; visibility: visible !important; height: 1em !important; width: 1em !important; z-index: 999999999 !important; paddhing: .3em !important; ');
+	};
 	
 	// Retrieve all the lists as set in options. If none are set, load the default list from our Github repo
 	function getLists() {
@@ -111,17 +122,7 @@
 			}
 		}
 	} 
-	
-	window.onload = function() {
-		getLists();
-		document.styleSheets[0].addRule('.FakeNews_link:before','content: url(https://github.com/Fdebijl/FakeNewsBlocker/raw/master/logo16_fake.png); display: inline !important; visibility: visible !important; height: 1em !important; width: 1em !important; z-index: 999999999 !important; paddhing: .3em !important; ');
-	};
-
-	function getPat(u) {
-		u = u.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-		return new RegExp('(http|https)(:\/\/)(.+|)(' + u + ')', 'i');
-	}
-	
+		
 	function matchURL() {
 		var lines = fromCache ? retrieve("FakeNews_blocklist").split('\n') : fullList.split('\n');
 		warnText = fromCache ? "(from cache)" : "";
@@ -151,7 +152,36 @@
 			}
 			
 			if (tab.match(getPat(url)) && url !== "" && types.indexOf(type) > -1 && fullblock) {
-				console.log("Fullblock initiated");
+				var blockr = document.createElement('div');
+				var blockrCore = document.createElement('div');
+				var blockrImage = document.createElement('img');
+				var blockrButton = document.createElement('button');
+				
+				blockrImage.src = chrome.extension.getURL("icons/logo128_fake.png");
+								
+				var blockrStyle = 'display:block;position:fixed;top:0;left:0;height:100vh;width:100vw;background:#FFF;content:"";z-index:99999999999999999999999999;opacity:0.97';
+				var blockrCoreStyle = 'display:flex;flex-flow: column wrap;justify-content:center;align-items: center;align-content: center;width: 100%;height: 100%;font-size: 22px;';
+				var blockrImageStyle = 'margin-bottom: 10px;';
+				var blockrButtonStyle = 'font-size: 14px; margin-top: 20px;';
+				
+				blockr.style.cssText += ';' + blockrStyle;
+				blockrCore.style.cssText += ';' + blockrCoreStyle;
+				blockrImage.style.cssText += ';' + blockrImageStyle;
+				blockrButton.style.cssText += ';' + blockrButtonStyle;
+				
+				blockr.id = "FNB_blockrmodal";
+				blockrCore.appendChild(blockrImage);
+				blockrCore.appendChild(document.createTextNode(chrome.i18n.getMessage("Attent", url)));
+				blockrButton.appendChild(document.createTextNode("Continue anyway"));
+				blockrButton.id = "FNB_continueButton";
+				blockrCore.appendChild(blockrButton);
+				
+				blockr.appendChild(blockrCore);
+				document.body.appendChild(blockr);			
+				
+				document.getElementById("FNB_continueButton").addEventListener("click", function(){
+					document.body.removeChild(document.getElementById("FNB_blockrmodal"));
+				});
 			} else if (tab.match(getPat(url)) && url !== "" && types.indexOf(type) > -1) {
 				chrome.runtime.sendMessage({t: "notu", l: url});
 				console.warn("Supplied proof " + warnText + ": " + art);
