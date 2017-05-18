@@ -25,13 +25,13 @@ ChristWire.org,http://fakenewswatch.com/,1
 ```
 
 There are currently four different types of fake news websites in the blocklist, of which the user may specify which ones they want blocked:
-1. Clickbait fake news - On by default
+1. Clickbait fake news - On by default  
 	Fake news meant to incite anger, interest or otherwise trick the reader into clicking an article that may appear legitimate, but is otherwise completely fake and only serves to generate ad income for the writer.
-2. Fake facts - On by default
+2. Fake facts - On by default  
 	News that spreads disinformation not necessarily pertaining to current events, but more so to scientific concepts, such as the effectiveness of vaccines, the status of climate change, the earth being round or not, etc.
-3. Satire - Off by default
+3. Satire - Off by default  
 	News or infotainment that is meant to entertain the reader or criticize current events through satire. Almost always not malicious, but may be misleading if not properly disclosed as being satire.
-4. Politically biased news - Off by default
+4. Politically biased news - Off by default  
 	News sites that have a heavy political bias and/or incite violence, harassment or spreading of fake news to further a political agenda.
 
 
