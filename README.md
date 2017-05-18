@@ -13,16 +13,28 @@ Fake News Blocker uses a crowdsourced list of so called 'fake news' websites tha
 If you have any contributions to the blacklist feel free to shoot me an email at apps@debijl.xyz or make a pull request here.
 
 __Format for blocklist.txt:__  
-`website-url,proof-url`  
+`website-url,proof-url,website-type`  
 Supply the URL to the fake news site in the following format, so no leading subdomains or HTTP and no trailing directories:
 `domain.tld`  
 A few examples:
 ```
-lincolnreport.com,http://fakenewswatch.com/
-AmericanNews.com,http://fakenewswatch.com/
-BigAmericanNews.com,http://fakenewswatch.com/
-ChristWire.org,http://fakenewswatch.com/
+lincolnreport.com,http://fakenewswatch.com/,1
+AmericanNews.com,http://fakenewswatch.com/,1
+BigAmericanNews.com,http://fakenewswatch.com/,1
+ChristWire.org,http://fakenewswatch.com/,1
 ```
+
+There are currently four different types of fake news websites in the blocklist, of which the user may specify which ones they want blocked:
+1. Clickbait fake news - On by default
+	Fake news meant to incite anger, interest or otherwise trick the reader into clicking an article that may appear legitimate, but is otherwise completely fake and only serves to generate ad income for the writer.
+2. Fake facts - On by default
+	News that spreads disinformation not necessarily pertaining to current events, but more so to scientific concepts, such as the effectiveness of vaccines, the status of climate change, the earth being round or not, etc.
+3. Satire - Off by default
+	News or infotainment that is meant to entertain the reader or criticize current events through satire. Almost always not malicious, but may be misleading if not properly disclosed as being satire.
+4. Politically biased news - Off by default
+	News sites that have a heavy political bias and/or incite to violence, harassment or spreading of fake news to further a political agenda.
+
+
 __Definition of Fake News__  
 Before adding a website to the blocklist, consider the following quote from [the New York Times on the definition of Fake News](https://www.nytimes.com/2016/12/06/us/fake-news-partisan-republican-democrat.html?_r=0):
 
