@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Fake News Blocker - Options</title>
+		<style>
+			th {
+				float: left;	
+			} td {
+				float: right;
+			} table {
+				width: 600px;
+			} .cats {
+    			float: left;
+    			width: 50%;
+			} body {
+				width: 650px;
+			} #blocklists, #blacklist {
+				width: 100%;
+    			height: 111px;
+			} hr {
+				width: 100%;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div id="status"></div>
+		
+		<center>
+			
+			<div>
+				<div class="cats">
+					<h4>Clickbait</h4>
+					Default: on <input type="checkbox" id="type1" />
+					<p>
+						Fake news meant to incite anger, interest or otherwise trick the reader into clicking an article that may appear legitimate, but is otherwise completely fake and only serves to generate ad income for the writer.
+					</p>
+				</div>
+
+				<div class="cats">
+					<h4>Fake facts</h4>
+					Default: on <input type="checkbox" id="type2" />
+					<p>
+						News that spreads disinformation not necessarily pertaining to current events, but more so to scientific concepts, such as the effectiveness of vaccines, the status of climate change, the earth being round or not, etc.
+					</p>
+				</div>
+
+				<div class="cats">
+					<h4>Satire</h4>
+					Default: off <input type="checkbox" id="type3" />
+					<p>
+						News or infotainment that is meant to entertain the reader or criticize current events through satire. Almost always not malicious, but may be misleading if not properly disclosed as being satire.
+					</p>
+				</div>
+
+				<div class="cats">
+					<h4>Politically biased news</h4>
+					Default: off <input type="checkbox" id="type4" />
+					<p>
+						News sites that have a heavy political bias and/or incite violence, harassment or spreading of fake news to further a political agenda.
+					</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<b><h3>Blocklists</h3></b>
+			<p>You can load your own blocklists here. Enter the URL to the .txt file you want to include in the master blocklist. Separate every new URL with a linebreak.</p>
+			<textarea id="blocklists" placeholder="Define your blocklists here. Separate every URL with a linebreak."></textarea>
+			
+			<b><h3>Single site blacklist</h3></b>
+			<span>You can specify single sites you want blocked without having to include an entire blocklist. Separate every new URL with a linebreak and enter the URL's in the following format:</span>  <code>example.com</code><br>
+			<textarea id="blacklist" placeholder="Define your blacklist here. Separate every URL with a linebreak."></textarea>
+			
+		</center>
+		
+		<br>
+		
+		<table>
+			<tr>
+				<th>
+					Block the page outright instead of showing a warning:
+				</th>
+				<td>
+					 Default: off <input type="checkbox" id="fullblock" />
+				</td>
+			</tr>
+		</table>
+		
+		<br>
+
+		<button id="save">Save</button>
+		<button id="discard">Discard</button>
+		
+		<script src="options.js"></script>
+	</body>
+</html>
