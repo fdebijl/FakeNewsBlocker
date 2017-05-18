@@ -2,7 +2,7 @@
 	"use strict";
 	
 	var reader = new XMLHttpRequest(), url = "", art = "", line = 0, then = "", fromCache = false, warnText = "", type = 0, types = [], fullblock = false, rval = "", 
-	tab = window.location.toString(), ael = 0, aels = document.getElementsByTagName('a'), now = new Date(), blockLists = [], fullList = "", i = 0;
+	tab = window.location.toString(), ael = 0, aels = document.getElementsByTagName('a'), now = new Date(), blockLists = [], fullList = "", i = 0, blacklist = "";
 	var weekFromNow = new Date(now.getTime() + 604800000);
 	now.setHours(0,0,0,0);
 		
@@ -34,10 +34,11 @@
 		});	return rval;
 	}
 	
-	// Retrieve all the lists as set in options. If none are set load the default list from our Github repo
+	// Retrieve all the lists as set in options. If none are set, load the default list from our Github repo
 	function getLists() {
 		chrome.storage.sync.get({
 			lists: "https://raw.githubusercontent.com/Fdebijl/FakeNewsBlocker/master/blocklist.txt",
+			blacklist: false,
 			types: [1,2],
 			fullblock: false
 		}, function(items) {
@@ -47,10 +48,15 @@
 			} else {
 				blockLists = [items.lists];
 			}
+			
 			types = items.types;
 			fullblock = items.fullblock;
+			
+			if (items.blacklist) {
+				blacklist = items.blacklist;
+			}
 
-			if (blockLists.join() != retrieve("FakeNews_prevlist")) {
+			if ((blockLists.join() + blacklist) != retrieve("FakeNews_prevlist")) {
 				// Setting has changed since we last imported the blocklists, time to craft a new master list
 				loadFile(1);
 			} else {
@@ -88,10 +94,13 @@
 						
 							
 						if (i === blockLists.length) {
+							// Append individual blacklisted sites to the master blocklist
+							fullList += blacklist;
+							
 							chrome.storage.local.set({
 								'FakeNews_blocklist': fullList,
 								'FakeNews_expires': weekFromNow.toString,
-								'FakeNews_prevlist': blockLists.join()
+								'FakeNews_prevlist': (blockLists.join() + blacklist)
 							}, function() {
 								matchURL();
 							});
@@ -105,7 +114,7 @@
 	
 	window.onload = function() {
 		getLists();
-		document.styleSheets[0].addRule('.FakeNews_link:before','content: url(https://github.com/Fdebijl/FakeNewsBlocker/raw/master/logo16_fake.png); display: inline !important; visibility: visible !important; height: 1em !important; width: 1em !important; z-index: 999999999 !important; padding: .3em !important; ');
+		document.styleSheets[0].addRule('.FakeNews_link:before','content: url(https://github.com/Fdebijl/FakeNewsBlocker/raw/master/logo16_fake.png); display: inline !important; visibility: visible !important; height: 1em !important; width: 1em !important; z-index: 999999999 !important; paddhing: .3em !important; ');
 	};
 
 	function getPat(u) {
@@ -115,11 +124,26 @@
 	
 	function matchURL() {
 		var lines = fromCache ? retrieve("FakeNews_blocklist").split('\n') : fullList.split('\n');
-		console.log("Lines: " + lines);
 		warnText = fromCache ? "(from cache)" : "";
+		
+		// Looping over the master blocklist
+		// lines: array of all lines in the master blocklist
+		// line: pointer (index) for the current line
+		mainloop:
 		for (line = 0; line < lines.length; line++) {
-			url = (lines[line]).split(',')[0];
-			art = (lines[line]).split(',')[1];
+			
+			if ((lines[line]).split(',')[0] != undefined) {
+				url = (lines[line]).split(',')[0];	
+			} else {
+				continue mainloop;
+			}
+						
+			if ((lines[line]).split(',')[1] != undefined) {
+				art = (lines[line]).split(',')[1];	
+			} else {
+				art = "is undefined";
+			}
+			
 			if ((lines[line]).split(',')[2] != undefined) {
 				type = (lines[line]).split(',')[2];	
 			} else {

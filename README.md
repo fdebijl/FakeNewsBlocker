@@ -32,7 +32,7 @@ There are currently four different types of fake news websites in the blocklist,
 3. Satire - Off by default
 	News or infotainment that is meant to entertain the reader or criticize current events through satire. Almost always not malicious, but may be misleading if not properly disclosed as being satire.
 4. Politically biased news - Off by default
-	News sites that have a heavy political bias and/or incite to violence, harassment or spreading of fake news to further a political agenda.
+	News sites that have a heavy political bias and/or incite violence, harassment or spreading of fake news to further a political agenda.
 
 
 __Definition of Fake News__  
