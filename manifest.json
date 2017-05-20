@@ -5,7 +5,7 @@
   "short_name": "FakeNewsBlocker",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "2.2.3",
+  "version": "2.3.3",
   
   "icons": {
   	"16": "icons/logo16.png",
@@ -14,7 +14,8 @@
   },
 
   "browser_action": {
-    "default_icon": "icons/logo48.png"
+    "default_icon": "icons/logo48.png",
+	"default_popup": "popup.html"
   },
   
   "content_scripts": [
@@ -31,6 +32,7 @@
   "permissions": [
 	"notifications",
 	"tabs",
+	"activeTab",
 	"storage"
   ],
   
