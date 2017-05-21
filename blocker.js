@@ -11,7 +11,7 @@
 	var tab = window.location.toString(), anchors = document.getElementsByTagName('a')
 	
 	// Objects
-	var master = new Object(), now = new Date(), weekFromNow = new Date(now.getTime() + 604800000);
+	var master = new Object(), slave = new Object(), now = new Date(), weekFromNow = new Date(now.getTime() + 604800000);
 	master.sites = [];
 	now.setHours(0,0,0,0);
 	
@@ -23,6 +23,14 @@
 		chrome.storage.local.get(key, function(result){
 			rval = result[key];
 		});	return rval;
+	}
+	
+	function provide(slaveData) {
+		chrome.runtime.onMessage.addListener(
+			function(message, sender, sendResponse) {
+				sendResponse(slaveData);
+			}
+		);
 	}
 	
 	// Runtime functions	
@@ -106,8 +114,8 @@
 						alert(e + " - Invalid JSON in blocklist at " + link);
 					}
 					
-					for (j = 0; j < thisList.sites; j++) {
-						var x = {
+					for (j = 0; j < thisList.sites.length; j++) {
+						var y = {
 							"url": thisList.sites[j].url,
 							"type": thisList.sites[j].type,
 							"proof": thisList.sites[j].proof,
@@ -116,9 +124,10 @@
 							"name": thisList.name,
 							"author": thisList.author,
 							"version": thisList.version,
-							"kind": "advanced"
+							"kind": "Advanced"
 						};
-						master.sites.push(x);
+						console.dir(y);
+						master.sites.push(y);
 					}
 				} else {					
 					var listArray = reader.responseText.split("\n");					
@@ -129,7 +138,7 @@
 							"proof": (listArray[k]).split(',')[2],
 							"notes": (listArray[k]).split(',')[3],
 							"origin": blockLists[index],
-							"kind": "simple"
+							"kind": "Simple"
 						};
 						master.sites.push(x);
 					}
@@ -192,34 +201,30 @@
 					document.body.removeChild(document.getElementById("FNB_blockrmodal"));
 				});
 				
-				chrome.runtime.onMessage.addListener(
-					function(message, sender, sendResponse) {
-						switch(message.type) {
-							case "getBlockInfo":
-								sendResponse(url, type, proof, notes, origin, name, version, kind);
-								break;
-							default:
-								console.error("Unrecognised message: ", message);
-						}
-					}
-				);
+				slave.url = url;
+				slave.type = type;
+				slave.proof = proof;
+				slave.notes = notes;
+				slave.origin = origin;
+				slave.name = name;
+				slave.version = version;
+				slave.kind = kind;
+				provide(slave);
 			} else if (url.toUpperCase() == location.host.replace('www.','').toUpperCase() && types.indexOf(type) > -1) {
 				chrome.runtime.sendMessage({
 					t: "notu", 
 					l: url
 				});
 				
-				chrome.runtime.onMessage.addListener(
-					function(message, sender, sendResponse) {
-						switch(message.type) {
-							case "getBlockInfo":
-								sendResponse(url, type, proof, notes, origin, name, version, kind);
-								break;
-							default:
-								console.error("Unrecognised message: ", message);
-						}
-					}
-				);
+				slave.url = url;
+				slave.type = type;
+				slave.proof = proof;
+				slave.notes = notes;
+				slave.origin = origin;
+				slave.name = name;
+				slave.version = version;
+				slave.kind = kind;
+				provide(slave);
 			}
 			
 			for (a = 0; a < anchors.length; a++) {
