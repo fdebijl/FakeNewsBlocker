@@ -1,0 +1,14 @@
+{
+	"name": "Test Blocklist",
+	"author": "Floris de Bijl",
+	"version": "1.0.0",
+	"locales": ["en", "nl"],
+	"sites": [{
+			"url": "reddit.com",
+			"type": 1,
+			"proof": "notreddit.com",
+			"notes": "Mostly shitposts tbh"
+		}
+
+	]
+}
