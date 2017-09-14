@@ -1,0 +1,30 @@
+{
+	"appName": {
+		"message": "Fake News Blocker"
+	},
+	
+	"appDesc": {
+    "message": "Primeste o notificare cand pagina pe care navighezi este cunoscuta pentru publicarea de stiri false."
+	},
+	
+	"notAccurate": {
+		"message": "Nu e chiar corect",
+		"description": "Button - First option in notification, user will click this if inclusion of this site is inaccurate or unjustified."
+	},
+	
+	"Accurate": {
+		"message": "Renunta",
+		"description": "Button - Should indicate that the notification will be dismissed or that the site is indeed fake. Use your best judgement and humor."
+	},
+	
+	"Attent": {
+    "message": "Potrivit datelor noastre $site$ publica stiri false in mod constant. Tine cont de asta inainte sa distribui acest articol.",
+		"description": "Full text that will display inside the notification.",
+		"placeholders": {
+			"site": {
+				"content": "$1",
+				"example": "acest site"
+			}
+		}
+	}
+}
