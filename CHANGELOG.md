@@ -2,8 +2,11 @@ Roadmap - no version
 	- Add i18n for options menu  
 	- Add i18n to alerts in blocker.js  
 	- Add i18n for the popup  
-
-Roadmap - 2.3.3  
+  
+2.3.4  
+    - Romanian translation  
+  
+2.3.3  
 	- Adds a second type of blocklist and expands the syntax of the basic blocklist  
 	- The reason why a site is marked as fake is now shown in a popup  
 
