@@ -2,7 +2,10 @@ Roadmap - no version
 	- Add i18n for options menu  
 	- Add i18n to alerts in blocker.js  
 	- Add i18n for the popup  
-  
+
+2.3.5  
+    - Minor fixes  
+      
 2.3.4  
     - Romanian translation  
   
